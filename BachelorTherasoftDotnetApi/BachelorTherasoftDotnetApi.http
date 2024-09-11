@@ -1,0 +1,6 @@
+@BachelorTherasoftDotnet_HostAddress = http://localhost:5189
+
+GET {{BachelorTherasoftDotnet_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

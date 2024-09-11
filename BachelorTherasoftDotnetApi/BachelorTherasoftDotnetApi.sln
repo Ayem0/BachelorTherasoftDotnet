@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BachelorTherasoftDotnetApi", "BachelorTherasoftDotnetApi.csproj", "{A2640494-5113-4114-ACE5-233FC8110158}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BachelorTherasoftDotnetDomain", "..\BachelorTherasoftDotnetDomain\BachelorTherasoftDotnetDomain.csproj", "{A95EE6B9-3F78-44B2-B6CC-6828CCC62EE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BachelorTherasoftDotnetInfrastructure", "..\BachelorTherasoftDotnetInfrastructure\BachelorTherasoftDotnetInfrastructure.csproj", "{798D203A-8FC6-4D62-9C18-B65692144A03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BachelorTherasoftDotnetApplication", "..\BachelorTherasoftDotnetApplication\BachelorTherasoftDotnetApplication.csproj", "{33DB3CEB-C113-4638-B0F3-361133BE11DC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A2640494-5113-4114-ACE5-233FC8110158}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2640494-5113-4114-ACE5-233FC8110158}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2640494-5113-4114-ACE5-233FC8110158}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2640494-5113-4114-ACE5-233FC8110158}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A95EE6B9-3F78-44B2-B6CC-6828CCC62EE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A95EE6B9-3F78-44B2-B6CC-6828CCC62EE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A95EE6B9-3F78-44B2-B6CC-6828CCC62EE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A95EE6B9-3F78-44B2-B6CC-6828CCC62EE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{798D203A-8FC6-4D62-9C18-B65692144A03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{798D203A-8FC6-4D62-9C18-B65692144A03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{798D203A-8FC6-4D62-9C18-B65692144A03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{798D203A-8FC6-4D62-9C18-B65692144A03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33DB3CEB-C113-4638-B0F3-361133BE11DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33DB3CEB-C113-4638-B0F3-361133BE11DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33DB3CEB-C113-4638-B0F3-361133BE11DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33DB3CEB-C113-4638-B0F3-361133BE11DC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2D9CFAD2-29B6-4D65-83A0-C69382CD8ADA}
+	EndGlobalSection
+EndGlobal

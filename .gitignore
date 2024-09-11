@@ -1,0 +1,13 @@
+BachelorTherasoftDotnetApi/.vs/*
+BachelorTherasoftDotnetApi/bin/*
+BachelorTherasoftDotnetApi/obj/*
+
+BachelorTherasoftDotnetApplication/bin/*
+BachelorTherasoftDotnetApplication/obj/*
+
+BachelorTherasoftDotnetDomain/bin/*
+BachelorTherasoftDotnetDomain/obj/*
+
+BachelorTherasoftDotnetInfrastucture/bin/*
+BachelorTherasoftDotnetInfrastucture/obj/*
+
