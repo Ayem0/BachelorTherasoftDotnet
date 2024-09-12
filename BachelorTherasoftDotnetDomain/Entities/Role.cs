@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Identity;
 
 namespace BachelorTherasoftDotnetDomain.Entities
 {
-    internal class Role
+    public class Role : IdentityRole
     {
+        public DateTime CreatedAt = DateTime.Now;
+        public DateTime DeletedAt { get; set; }
+        public DateTime DisabledAt { get; set; }
+        public DateTime ModifiedAt { get; set; }
+
     }
 }

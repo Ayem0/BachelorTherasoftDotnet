@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BachelorTherasoftDotnetInfrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9d73b8f33557a5d37bac14775527cab670bbabad")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+920e4caed8acfb979446a21b9a6bfd6c5043a036")]
 [assembly: System.Reflection.AssemblyProductAttribute("BachelorTherasoftDotnetInfrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BachelorTherasoftDotnetInfrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

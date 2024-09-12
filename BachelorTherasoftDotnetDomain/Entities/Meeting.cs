@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BachelorTherasoftDotnetDomain.Entities
+﻿namespace BachelorTherasoftDotnetDomain.Entities
 {
-    internal class Meeting
+    internal class Meeting : DefaultFields
     {
+        public string Id = Guid.NewGuid().ToString();
+        public required string ClientId { get; set; }
+        public required string ProfessionalId { get; set; }
     }
 }
