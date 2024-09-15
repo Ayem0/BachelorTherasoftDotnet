@@ -1,6 +1,7 @@
 BachelorTherasoftDotnetApi/.vs/*
 BachelorTherasoftDotnetApi/bin/*
 BachelorTherasoftDotnetApi/obj/*
+BachelorTherasoftDotnetApi/.DS_Store
 
 BachelorTherasoftDotnetApplication/bin/*
 BachelorTherasoftDotnetApplication/obj/*
