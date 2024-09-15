@@ -8,6 +8,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BachelorTherasoftDotnetDomain\BachelorTherasoftDotnetDomain.csproj" />
+    <ProjectReference Include="..\BachelorTherasoftDotnetInfrastructure\BachelorTherasoftDotnetInfrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Services\" />
   </ItemGroup>
 
 </Project>

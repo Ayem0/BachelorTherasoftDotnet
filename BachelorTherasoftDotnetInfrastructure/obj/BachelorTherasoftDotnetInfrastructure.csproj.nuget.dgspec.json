@@ -1,25 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "/Users/aa/DEV/BachelorTherasoft/BachelorTherasoftDotnet/BachelorTherasoftDotnetInfrastructure/BachelorTherasoftDotnetInfrastructure.csproj": {}
+    "C:\\LIFE\\PROJECTS\\BachelorTherasoft\\BachelorTherasoftDotnet\\BachelorTherasoftDotnetInfrastructure\\BachelorTherasoftDotnetInfrastructure.csproj": {}
   },
   "projects": {
-    "/Users/aa/DEV/BachelorTherasoft/BachelorTherasoftDotnet/BachelorTherasoftDotnetDomain/BachelorTherasoftDotnetDomain.csproj": {
+    "C:\\LIFE\\PROJECTS\\BachelorTherasoft\\BachelorTherasoftDotnet\\BachelorTherasoftDotnetDomain\\BachelorTherasoftDotnetDomain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/aa/DEV/BachelorTherasoft/BachelorTherasoftDotnet/BachelorTherasoftDotnetDomain/BachelorTherasoftDotnetDomain.csproj",
+        "projectUniqueName": "C:\\LIFE\\PROJECTS\\BachelorTherasoft\\BachelorTherasoftDotnet\\BachelorTherasoftDotnetDomain\\BachelorTherasoftDotnetDomain.csproj",
         "projectName": "BachelorTherasoftDotnetDomain",
-        "projectPath": "/Users/aa/DEV/BachelorTherasoft/BachelorTherasoftDotnet/BachelorTherasoftDotnetDomain/BachelorTherasoftDotnetDomain.csproj",
-        "packagesPath": "/Users/aa/.nuget/packages/",
-        "outputPath": "/Users/aa/DEV/BachelorTherasoft/BachelorTherasoftDotnet/BachelorTherasoftDotnetDomain/obj/",
+        "projectPath": "C:\\LIFE\\PROJECTS\\BachelorTherasoft\\BachelorTherasoftDotnet\\BachelorTherasoftDotnetDomain\\BachelorTherasoftDotnetDomain.csproj",
+        "packagesPath": "C:\\Users\\ayeme\\.nuget\\packages\\",
+        "outputPath": "C:\\LIFE\\PROJECTS\\BachelorTherasoft\\BachelorTherasoftDotnet\\BachelorTherasoftDotnetDomain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/aa/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\ayeme\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -64,34 +71,41 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/aa/DEV/BachelorTherasoft/BachelorTherasoftDotnet/BachelorTherasoftDotnetInfrastructure/BachelorTherasoftDotnetInfrastructure.csproj": {
+    "C:\\LIFE\\PROJECTS\\BachelorTherasoft\\BachelorTherasoftDotnet\\BachelorTherasoftDotnetInfrastructure\\BachelorTherasoftDotnetInfrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/aa/DEV/BachelorTherasoft/BachelorTherasoftDotnet/BachelorTherasoftDotnetInfrastructure/BachelorTherasoftDotnetInfrastructure.csproj",
+        "projectUniqueName": "C:\\LIFE\\PROJECTS\\BachelorTherasoft\\BachelorTherasoftDotnet\\BachelorTherasoftDotnetInfrastructure\\BachelorTherasoftDotnetInfrastructure.csproj",
         "projectName": "BachelorTherasoftDotnetInfrastructure",
-        "projectPath": "/Users/aa/DEV/BachelorTherasoft/BachelorTherasoftDotnet/BachelorTherasoftDotnetInfrastructure/BachelorTherasoftDotnetInfrastructure.csproj",
-        "packagesPath": "/Users/aa/.nuget/packages/",
-        "outputPath": "/Users/aa/DEV/BachelorTherasoft/BachelorTherasoftDotnet/BachelorTherasoftDotnetInfrastructure/obj/",
+        "projectPath": "C:\\LIFE\\PROJECTS\\BachelorTherasoft\\BachelorTherasoftDotnet\\BachelorTherasoftDotnetInfrastructure\\BachelorTherasoftDotnetInfrastructure.csproj",
+        "packagesPath": "C:\\Users\\ayeme\\.nuget\\packages\\",
+        "outputPath": "C:\\LIFE\\PROJECTS\\BachelorTherasoft\\BachelorTherasoftDotnet\\BachelorTherasoftDotnetInfrastructure\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/aa/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\ayeme\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/aa/DEV/BachelorTherasoft/BachelorTherasoftDotnet/BachelorTherasoftDotnetDomain/BachelorTherasoftDotnetDomain.csproj": {
-                "projectPath": "/Users/aa/DEV/BachelorTherasoft/BachelorTherasoftDotnet/BachelorTherasoftDotnetDomain/BachelorTherasoftDotnetDomain.csproj"
+              "C:\\LIFE\\PROJECTS\\BachelorTherasoft\\BachelorTherasoftDotnet\\BachelorTherasoftDotnetDomain\\BachelorTherasoftDotnetDomain.csproj": {
+                "projectPath": "C:\\LIFE\\PROJECTS\\BachelorTherasoft\\BachelorTherasoftDotnet\\BachelorTherasoftDotnetDomain\\BachelorTherasoftDotnetDomain.csproj"
               }
             }
           }
@@ -132,7 +146,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

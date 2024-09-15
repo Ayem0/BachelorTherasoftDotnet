@@ -1,10 +1,12 @@
-﻿namespace BachelorTherasoftDotnetDomain.Entities
+﻿using BachelorTherasoftDotnetDomain.Classes;
+
+namespace BachelorTherasoftDotnetDomain.Entities;
+
+internal class Comment : DefaultFields
 {
-    internal class Comment : DefaultFields
-    {
-        public string Id = Guid.NewGuid().ToString();
-        public required string UserId { get; set; }
-        public required string MeetingId { get; set; }
-        public required string Content { get; set; }
-    }
+    public string Id = Guid.NewGuid().ToString();
+    public required string MemberId { get; set; }
+    public required string TaskId { get; set; }
+    public required string Content { get; set; }
 }
+

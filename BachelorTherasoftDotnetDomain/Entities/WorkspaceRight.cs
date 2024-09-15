@@ -2,10 +2,9 @@
 
 namespace BachelorTherasoftDotnetDomain.Entities;
 
-internal class Conversation : DefaultFields
+internal class WorkspaceRight : DefaultFields
 {
     public string Id = Guid.NewGuid().ToString();
-    public string ?Name { get; set; }
-    public required List<string> MembersId { get; set; }
+    public required string WorkspaceId { get; set; }
+    public required string Name { get; set; }
 }
-

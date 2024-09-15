@@ -1,10 +1,10 @@
-﻿using BachelorTherasoftDotnetDomain.Classes;
+using System;
 
 namespace BachelorTherasoftDotnetDomain.Entities;
 
-internal class Room : DefaultFields
+public class DocumentCategory
 {
     public string Id = Guid.NewGuid().ToString();
-    public required string ZoneId { get; set; }
     public required string Name { get; set; }
+    public required string WorkspaceId { get; set; }
 }
