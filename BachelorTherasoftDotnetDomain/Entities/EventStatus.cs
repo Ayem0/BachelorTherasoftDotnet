@@ -2,7 +2,7 @@
 
 namespace BachelorTherasoftDotnetDomain.Entities;
 
-internal class TaskStatus : DefaultFields
+internal class EventStatus : DefaultFields
 {
     public string Id = Guid.NewGuid().ToString();
     public required string WorkspaceId { get; set; }

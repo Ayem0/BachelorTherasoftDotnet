@@ -2,7 +2,7 @@
 
 namespace BachelorTherasoftDotnetDomain.Entities;
 
-internal class Task : DefaultFields
+internal class Event : DefaultFields
 {
     public string Id = Guid.NewGuid().ToString();
     public TimeOnly StartTime { get; set; }
