@@ -5,6 +5,8 @@ namespace BachelorTherasoftDotnetDomain.Entities;
 
 public class Document : DefaultFields
 {
-    public string Id = Guid.NewGuid().ToString();
-    public required string TaskId { get; set; }
+    public string Id { get; set; } = Guid.NewGuid().ToString();
+    public required string EventId { get; set; }
+    public required Event Event { get; set; }
+    public List<DocumentCategory> DocumentCategories { get; set; } = [];
 }

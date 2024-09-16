@@ -2,16 +2,13 @@
 
 namespace BachelorTherasoftDotnetDomain.Entities;
 
-public class EventCategory : DefaultFields
+public class Area : DefaultFields
 {
     public string Id { get; set; } = Guid.NewGuid().ToString();
-    public required string WorkspaceId { get; set; }
+    public required string LocationId { get; set; }
+    public required Location Location { get; set; }
     public required string Name { get; set; }
-    public string ?Icon { get; set; }
 
-
-    public List<Event> Events { get; set; } = [];
-
+    public List<Room> Rooms { get; set; } = [];
 }
-
 

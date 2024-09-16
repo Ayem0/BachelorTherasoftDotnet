@@ -5,7 +5,9 @@ namespace BachelorTherasoftDotnetDomain.Entities;
 
 public class WorkspaceRole : DefaultFields
 {
-    public string Id = Guid.NewGuid().ToString();
+    public string Id { get; set; } = Guid.NewGuid().ToString();
     public required string WorkspaceId { get; set; }
     public required string Name { get; set; }
+    public List<User> Users { get; set; } = [];
+    public List<WorkspaceRight> WorkspaceRights { get; set; } = [];
 }

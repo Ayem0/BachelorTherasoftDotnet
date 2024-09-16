@@ -10,12 +10,15 @@ public class User : IdentityUser
     public DateTime ?DeletedAt { get; set; }
     public DateTime ?ModifiedAt { get; set; }
     public DateTime ?DisabledAt { get; set; }
-    public DateTime ?DisabledEnd { get; set; }
 
     public User(string FirstName, string LastName, string Email) {
         this.Email = Email;
         this.FirstName = FirstName;
         this.LastName = LastName;
     }
+
+    public List<User_Workspace> Workspaces { get; set; } = [];
+    public List<WorkspaceRole> WorkspaceRoles { get; set; } = [];
+    public List<Event> Events { get; set; } = [];
 }
 
