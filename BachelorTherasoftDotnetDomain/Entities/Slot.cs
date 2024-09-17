@@ -1,4 +1,5 @@
 using BachelorTherasoftDotnetDomain.Classes;
+using BachelorTherasoftDotnetDomain.Enums;
 
 namespace BachelorTherasoftDotnetDomain.Entities;
 
@@ -7,13 +8,12 @@ public class Slot : DefaultFields
     public string Id { get; set; } = Guid.NewGuid().ToString();
     public required string RoomId { get; set; }
     public required Room Room { get; set; }
-    public TimeOnly StartTime { get; set; }
-    public TimeOnly EndTime { get; set; }
-    public DateTime StartDate { get; set; }
-    public DateTime EndDate { get; set; }
-    public required List<DayOfWeek> RepetitionDays { get; set; } 
-    public required List<EventCategory> EventCategories { get; set; }
-    public int RepetitionNumber { get; set; }
-    public required string RepetitionType { get; set; } // string a changer par un enum dayly weekly monthly annual
-
+    public required TimeOnly StartTime { get; set; }
+    public required TimeOnly EndTime { get; set; }
+    public required DateOnly StartDate { get; set; }
+    public required DateOnly EndDate { get; set; }
+    public List<DayOfWeek> ?Days { get; set; } // Voir si moyen de faire autre chose / a modifier dans le dbcontext pour en faire un objet json
+    public List<EventCategory> EventCategories { get; set; } = [];
+    public int ?IntervalDelay { get; set; }
+    public Interval ?Interval { get; set; } // string a changer par un enum dayly weekly monthly annual / a modifier dans le dbcontext en json
 }

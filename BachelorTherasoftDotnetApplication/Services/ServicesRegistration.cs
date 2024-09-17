@@ -12,7 +12,7 @@ namespace BachelorTherasoftDotnetApplication.Services;
 public static class ServicesRegistration
 {
     public static void AddMySqlDbContext(this IServiceCollection services, IConfiguration configuration) {
-        services.AddDbContext<MySqlDbContext>(options => options.UseMySql(new MySqlConnection(configuration.GetConnectionString("Default")), new MySqlServerVersion(new Version(8, 0, 38))));
+        services.AddDbContext<MySqlDbContext>(options => options.UseMySql(new MySqlConnection(configuration.GetConnectionString("MySQL")), new MySqlServerVersion(new Version(8, 0, 38))));
     }
     public static void AddIdentity(this IServiceCollection services) {
         services.AddIdentity<User, Role>(options => {

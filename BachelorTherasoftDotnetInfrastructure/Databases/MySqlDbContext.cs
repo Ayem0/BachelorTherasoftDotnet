@@ -14,7 +14,7 @@ public class MySqlDbContext : IdentityDbContext<User, Role, string>
     public DbSet<DocumentCategory> DocumentCategory { get; set; }
     public DbSet<Event> Event { get; set; }
     public DbSet<EventCategory> EventCategory { get; set; }
-    public DbSet<EventStatus> EventStatus { get; set; }
+    public DbSet<Tag> Tag { get; set; }
     public DbSet<Location> Location { get; set; }
     public DbSet<Participant> Participant { get; set; }
     public DbSet<ParticipantCategory> ParticipantCategory { get; set; }

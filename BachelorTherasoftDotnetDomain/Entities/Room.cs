@@ -9,5 +9,5 @@ public class Room : DefaultFields
     public required Area Area { get; set; }
     public required string Name { get; set; }
     public List<Event> Events { get; set; } = [];
-    public required List<Slot> Slots { get; set; } 
+    public List<Slot> Slots { get; set; } = [];
 }
