@@ -13,7 +13,8 @@ public class Event : DefaultFields
 
     public List<Participant> Participants { get; set; } = [];
     public List<User> Users { get; set; } = [];
-    public List<EventCategory> EventCategories { get; set; } = [];
+    public required string EventCategoryId { get; set; }
+    public required EventCategory EventCategory { get; set; }
     public required string TagId { get; set; } 
     public required Tag Tag { get; set; }
 }
