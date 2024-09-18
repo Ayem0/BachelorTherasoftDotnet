@@ -37,10 +37,6 @@ public class MySqlDbContext : IdentityDbContext<User, Role, string>
             v => v == null ? null : JsonSerializer.Deserialize<List<DayOfWeek>>(v, JsonSerializerOptions) // Si la chaîne est null, retourner null
         );
 
-
-
-
-
        builder.Entity<User_Workspace>()
             .HasKey(uw => new { uw.UserId, uw.WorkspaceId }); 
 

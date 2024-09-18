@@ -232,6 +232,8 @@ namespace BachelorTherasoftDotnetInfrastructure.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     WorkspaceId = table.Column<string>(type: "varchar(255)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
+                    Icon = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
                     ModifiedAt = table.Column<DateTime>(type: "datetime(6)", nullable: true),
                     DeletedAt = table.Column<DateTime>(type: "datetime(6)", nullable: true)
                 },
@@ -257,7 +259,7 @@ namespace BachelorTherasoftDotnetInfrastructure.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Name = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Icon = table.Column<string>(type: "longtext", nullable: true)
+                    Icon = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     ModifiedAt = table.Column<DateTime>(type: "datetime(6)", nullable: true),
                     DeletedAt = table.Column<DateTime>(type: "datetime(6)", nullable: true)
@@ -350,6 +352,8 @@ namespace BachelorTherasoftDotnetInfrastructure.Migrations
                     WorkspaceId = table.Column<string>(type: "varchar(255)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Name = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Icon = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     ModifiedAt = table.Column<DateTime>(type: "datetime(6)", nullable: true),
                     DeletedAt = table.Column<DateTime>(type: "datetime(6)", nullable: true)
@@ -615,6 +619,8 @@ namespace BachelorTherasoftDotnetInfrastructure.Migrations
                     EndDate = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     Description = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
+                    EventCategoryId = table.Column<string>(type: "varchar(255)", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
                     TagId = table.Column<string>(type: "varchar(255)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     RoomId = table.Column<string>(type: "varchar(255)", nullable: true)
@@ -625,6 +631,12 @@ namespace BachelorTherasoftDotnetInfrastructure.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Event", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Event_EventCategory_EventCategoryId",
+                        column: x => x.EventCategoryId,
+                        principalTable: "EventCategory",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Event_Room_RoomId",
                         column: x => x.RoomId,
@@ -687,33 +699,6 @@ namespace BachelorTherasoftDotnetInfrastructure.Migrations
                     table.ForeignKey(
                         name: "FK_Document_Event_EventId",
                         column: x => x.EventId,
-                        principalTable: "Event",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.CreateTable(
-                name: "EventEventCategory",
-                columns: table => new
-                {
-                    EventCategoriesId = table.Column<string>(type: "varchar(255)", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    EventsId = table.Column<string>(type: "varchar(255)", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4")
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_EventEventCategory", x => new { x.EventCategoriesId, x.EventsId });
-                    table.ForeignKey(
-                        name: "FK_EventEventCategory_EventCategory_EventCategoriesId",
-                        column: x => x.EventCategoriesId,
-                        principalTable: "EventCategory",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_EventEventCategory_Event_EventsId",
-                        column: x => x.EventsId,
                         principalTable: "Event",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -886,6 +871,11 @@ namespace BachelorTherasoftDotnetInfrastructure.Migrations
                 column: "DocumentsId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Event_EventCategoryId",
+                table: "Event",
+                column: "EventCategoryId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Event_RoomId",
                 table: "Event",
                 column: "RoomId");
@@ -904,11 +894,6 @@ namespace BachelorTherasoftDotnetInfrastructure.Migrations
                 name: "IX_EventCategorySlot_SlotsId",
                 table: "EventCategorySlot",
                 column: "SlotsId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_EventEventCategory_EventsId",
-                table: "EventEventCategory",
-                column: "EventsId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_EventParticipant_ParticipantsId",
@@ -1006,9 +991,6 @@ namespace BachelorTherasoftDotnetInfrastructure.Migrations
                 name: "EventCategorySlot");
 
             migrationBuilder.DropTable(
-                name: "EventEventCategory");
-
-            migrationBuilder.DropTable(
                 name: "EventParticipant");
 
             migrationBuilder.DropTable(
@@ -1039,9 +1021,6 @@ namespace BachelorTherasoftDotnetInfrastructure.Migrations
                 name: "Slot");
 
             migrationBuilder.DropTable(
-                name: "EventCategory");
-
-            migrationBuilder.DropTable(
                 name: "ParticipantCategory");
 
             migrationBuilder.DropTable(
@@ -1058,6 +1037,9 @@ namespace BachelorTherasoftDotnetInfrastructure.Migrations
 
             migrationBuilder.DropTable(
                 name: "Event");
+
+            migrationBuilder.DropTable(
+                name: "EventCategory");
 
             migrationBuilder.DropTable(
                 name: "Room");

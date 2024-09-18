@@ -10,12 +10,12 @@ public class Event : DefaultFields
     public required DateTime StartDate { get; set; }
     public required DateTime EndDate { get; set; }
     public string ?Description { get; set; }
-
-    public List<Participant> Participants { get; set; } = [];
-    public List<User> Users { get; set; } = [];
+    public required string RoomId { get; set; }
+    public required Room Room { get; set; }
     public required string EventCategoryId { get; set; }
     public required EventCategory EventCategory { get; set; }
-    public required string TagId { get; set; } 
-    public required Tag Tag { get; set; }
+    public List<Participant> Participants { get; set; } = [];
+    public List<User> Users { get; set; } = [];
+    public List<Tag> Tags { get; set; } = [];
 }
 

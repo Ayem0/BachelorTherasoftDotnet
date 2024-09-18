@@ -1,3 +1,5 @@
+using BachelorTherasoftDotnetApplication.Services;
+using BachelorTherasoftDotnetDomain.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BachelorTherasoftDotnetApi.Controllers
@@ -13,9 +15,11 @@ namespace BachelorTherasoftDotnetApi.Controllers
 
         private readonly ILogger<WeatherForecastController> _logger;
 
+
         public WeatherForecastController(ILogger<WeatherForecastController> logger)
         {
             _logger = logger;
+
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
@@ -29,5 +33,7 @@ namespace BachelorTherasoftDotnetApi.Controllers
             })
             .ToArray();
         }
+
+
     }
 }
