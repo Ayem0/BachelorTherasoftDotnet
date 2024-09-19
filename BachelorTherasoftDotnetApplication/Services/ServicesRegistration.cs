@@ -1,9 +1,10 @@
-using System;
 using BachelorTherasoftDotnetDomain.Entities;
 using BachelorTherasoftDotnetInfrastructure.Databases;
+using BachelorTherasoftDotnetInfrastructure.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -12,8 +13,9 @@ using MySqlConnector;
 
 namespace BachelorTherasoftDotnetApplication.Services;
 
-public static class ServicesRegistration
+public static class ServicesRegistration 
 {
+    // 
     public static void AddMySqlDbContext(this IServiceCollection services, IConfiguration configuration) {
         services.AddDbContext<MySqlDbContext>(
             options => options.UseMySql(
@@ -24,10 +26,8 @@ public static class ServicesRegistration
     }
 
     public static void AddIdentity(this IServiceCollection services) {
-
-
         services.AddIdentity<User, Role>(options => {
-           options.SignIn.RequireConfirmedEmail = true;
+            options.SignIn.RequireConfirmedEmail = true;
             options.User.RequireUniqueEmail = true;
             // options.User.AllowedUserNameCharacters = "azertyuiopqsdfghjklmwxcvbnAZERTYUIOPQSDFGHJKLMWXCVBN0123456789";
             options.Password.RequireNonAlphanumeric = true;
@@ -46,5 +46,30 @@ public static class ServicesRegistration
         applicationBuilder.UseEndpoints( endpoints => {
             endpoints.MapIdentityApi<User>();
         });
+    }
+
+    public static void AddWebCors(this IServiceCollection service) {
+        service.AddCors( Options => Options.AddPolicy("Angular", policy => 
+            policy.WithOrigins("http://localhost:4200/")
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+        ));
+    }
+
+    public static void UseWebCors(this IApplicationBuilder builder) {
+        builder.UseCors("Angular");
+    }
+
+    public static void AddEmailSender(this IServiceCollection service, IConfiguration configuration) {
+        service.AddTransient<IEmailSender, EmailSender>();
+        service.Configure<AuthMessageSenderOptions>(configuration);
+    }
+    // test
+    public static void AddAuth(this IServiceCollection service) {
+        service.AddAuthentication(options => {
+            options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+            options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+            options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+        }).AddBearerToken();
     }
 }

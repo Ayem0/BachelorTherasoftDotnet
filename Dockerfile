@@ -17,21 +17,24 @@ COPY ./BachelorTherasoftDotnetApi/BachelorTherasoftDotnetApi.csproj ./BachelorTh
 # Restaurer les dépendances (en incluant tous les projets nécessaires)
 RUN dotnet restore ./BachelorTherasoftDotnetApi/BachelorTherasoftDotnetApi.csproj
 
-# Copier tout le code source des différents projets
-COPY ./BachelorTherasoftDotnetApplication ./BachelorTherasoftDotnetApplication/
-COPY ./BachelorTherasoftDotnetDomain ./BachelorTherasoftDotnetDomain/
-COPY ./BachelorTherasoftDotnetInfrastructure ./BachelorTherasoftDotnetInfrastructure/
-COPY ./BachelorTherasoftDotnetApi ./BachelorTherasoftDotnetApi/
+RUN dotnet tool install --global dotnet-ef
 
-# Compiler l'application
-WORKDIR /src/BachelorTherasoftDotnetApi
-RUN dotnet build "BachelorTherasoftDotnetApi.csproj" -c $BUILD_CONFIGURATION -o /app/build
+ENV PATH="$PATH:/root/.dotnet/tools"
 
+COPY . .
+
+# Build the project
+RUN dotnet build "./BachelorTherasoftDotnetApi/BachelorTherasoftDotnetApi.csproj" -c $BUILD_CONFIGURATION -o /app/build
+
+# This step is required only if you're still doing a full publish (for production)
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "BachelorTherasoftDotnetApi.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "./BachelorTherasoftDotnetApi/BachelorTherasoftDotnetApi.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
-FROM base AS final
-WORKDIR /app
-COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "BachelorTherasoftDotnetApi.dll"]
+# Final stage: for developmsnt (dotnet watch run)
+FROM build AS devs
+WORKDIR /src
+
+
+# Command to run the app in watch mode for development (with the project path specified)
+CMD ["dotnet", "watch", "run", "--project", "/src/BachelorTherasoftDotnetApi/BachelorTherasoftDotnetApi.csproj", "--urls", "http://0.0.0.0:8080"]
