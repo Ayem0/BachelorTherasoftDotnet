@@ -1,8 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <UserSecretsId>a7180aca-898c-4560-957f-803cfa4e2278</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\BachelorTherasoftDotnetDomain\BachelorTherasoftDotnetDomain.csproj" />

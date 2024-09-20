@@ -27,7 +27,7 @@ public static class ServicesRegistration
 
     public static void AddIdentity(this IServiceCollection services) {
         services.AddIdentity<User, Role>(options => {
-            options.SignIn.RequireConfirmedEmail = true;
+            // options.SignIn.RequireConfirmedEmail = true;
             options.User.RequireUniqueEmail = true;
             // options.User.AllowedUserNameCharacters = "azertyuiopqsdfghjklmwxcvbnAZERTYUIOPQSDFGHJKLMWXCVBN0123456789";
             options.Password.RequireNonAlphanumeric = true;

@@ -4,9 +4,10 @@ namespace BachelorTherasoftDotnetDomain.Interfaces;
 
 public interface IParticipantRepository
 {
-    Task UpdateFirstNameAsync(string participantId, string firstName);
-    Task UpdateLastNameAsync(string participantId, string lastName);
-    Task UpdateEmailAsync(string participantId, string email);
-    Task UpdateAddressAsync(string participantId, string address);
-    Task DeleteAsync(string participantId);
+    Task CreateParticipantAsync(string firstName, string lastName, string? email, string? country, string? description, DateTime? dateOfBirth, string? participantCategoryId);
+    Task GetParticipantAsync(string participantId);
+    Task GetParticipantsAsync(string[] participantIds);
+    Task UpdateParticipantAsync(string participantId, string firstName, string lastName, string? email, string? country, string? description, DateTime? dateOfBirth, string? participantCategoryId);
+    Task DeleteParticipantAsync(string participantId);
+    Task DeleteParticipantsAsync(string[] participantIds);
 }
